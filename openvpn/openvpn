@@ -86,8 +86,6 @@ sub print_output {
                         $current_config_name='unknown';
                     }
 
-                    $current_config_path = "$config_prefix/$current_config_path";
-
                     # Get OpenVPN interface device name
                     open(CONFIG, '<', $current_config_path) or die "Can't read config file '$current_config_path': $!\n";
                     while(<CONFIG>) {
@@ -126,7 +124,6 @@ sub print_output {
         $short_status='down';
         $names = $short_status;
     }
-
     print "$names\n";
     print "$short_status\n";
 
